@@ -1,0 +1,7 @@
+#RSSからビルド済バイナリの一覧を取得する
+curl -L https://osdn.net/projects/exewrap/releases/rss | sed -e 's/>/>\'$'\n/g' -e 's/"/\'$'\n/g' | grep "downloads/.*/exewrap.*zip" | sed "s/https:\/\/osdn.net\/projects\/exewrap\/downloads\/.*\/exewrap\(.*\)\//https:\/\/osdn\.net\/dl\/exewrap\/exewrap\1/"
+
+#このリポジトリと同等のリポジトリを作る
+apt install git-svn
+git svn clone --trunk= --branches=branches --prefix=svn/ http://svn.osdn.net/svnroot/exewrap/
+
