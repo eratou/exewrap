@@ -1,0 +1,16 @@
+name: SVN pull
+on:
+  schedule:
+    - cron: '30 3 * * 3'
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt install git-svn
+      - name: Copy
+        run: |
+          git svn rebase
+
