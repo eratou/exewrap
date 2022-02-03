@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install git git-svn
+          sudo apt-get install -f git-svn
       - name: Copy
         run: |
           git svn rebase
