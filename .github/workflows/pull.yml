@@ -1,7 +1,9 @@
 name: SVN pull
 on:
+  workflow_dispatch:
+
   schedule:
-    - cron: '30 3 * * 5'
+    - cron: '30 3 * * 3'
 jobs:
   container-job:
     runs-on: ubuntu-latest
