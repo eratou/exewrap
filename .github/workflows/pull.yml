@@ -12,6 +12,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
+          sudo apt-get remove git
           sudo apt-get install -f git-svn
       - name: Copy
         run: |
