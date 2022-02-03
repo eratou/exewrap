@@ -13,6 +13,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get remove git
+          sudo apt-get autoclean
+          sudo apt-get clean all
           sudo apt-get install -f git-svn
       - name: Copy
         run: |
