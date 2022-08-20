@@ -1,9 +1,6 @@
 name: SVN pull
 on:
   workflow_dispatch:
-
-  schedule:
-    - cron: '30 3 * * 3'
 jobs:
   container-job:
     runs-on: ubuntu-latest
@@ -12,7 +9,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --allow-downgrades -f git-man=1:2.25.1-1ubuntu3.2 git=1:2.25.1-1ubuntu3.2 git-svn=1:2.25.1-1ubuntu3.2
+          sudo apt-get install -y git-svn
       - name: Copy
         run: |
           git svn clone --trunk= --branches=branches --prefix=svn/ http://svn.osdn.net/svnroot/exewrap/
